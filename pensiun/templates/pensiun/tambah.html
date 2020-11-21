@@ -1,0 +1,22 @@
+{% extends 'base_tambah.html' %}
+{% load static %}
+{% block tambah %}
+<form action="" method="post" enctype="multipart/form-data">
+	{% csrf_token %}
+    <div class="card-body">
+        <div class="form-group">
+            <label for="nipeg">Nomor Induk Pegawai</label>
+            <input type="text" class="form-control" id="nipeg" name="nipeg"  required>
+        </div>
+        <div class="form-group">
+            <label for="nipeg">Unggah File SK</label>
+            <input type="file" class="form-control" id="file" name="file"  accept="application/pdf" required>
+            <small class="text-muted">Max size: 10MB, format file: PDF</small>
+        </div>
+    </div>
+    <div class="card-action text-right">
+        <a href="pemberhentian_pegawai.html" class="btn btn-default mr-2">Batal</a>
+        <button type="submit" class="btn btn-primary">Simpan</button>
+    </div>
+</form>
+{% endblock tambah %}

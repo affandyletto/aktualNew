@@ -1,0 +1,21 @@
+2020/11/10-10:20:53.406 37fc Reusing MANIFEST C:\pln\Program Aktual\aktual\chrome-data\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2020/11/10-10:20:53.406 37fc Recovering log #4
+2020/11/10-10:20:53.556 37fc Reusing old log C:\pln\Program Aktual\aktual\chrome-data\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000004.log 
+2020/11/10-10:21:10.942 3244 Level-0 table #8: started
+2020/11/10-10:21:11.006 3244 Level-0 table #8: 1263059 bytes OK
+2020/11/10-10:21:11.007 3244 Delete type=0 #4
+2020/11/10-10:21:22.462 22c8 Compacting 1@1 + 1@2 files
+2020/11/10-10:21:22.568 22c8 Generated table #9@1: 17953 keys, 765268 bytes
+2020/11/10-10:21:22.568 22c8 Compacted 1@1 + 1@2 files => 765268 bytes
+2020/11/10-10:21:22.569 22c8 compacted to: files[ 0 0 1 0 0 0 0 ]
+2020/11/10-10:21:22.570 22c8 Delete type=2 #5
+2020/11/10-10:21:22.571 22c8 Delete type=2 #8
+2020/11/10-10:21:24.592 37fc Level-0 table #11: started
+2020/11/10-10:21:24.670 37fc Level-0 table #11: 1106147 bytes OK
+2020/11/10-10:21:24.674 37fc Delete type=0 #7
+2020/11/10-10:21:29.761 13dc Compacting 1@1 + 1@2 files
+2020/11/10-10:21:29.848 13dc Generated table #12@1: 440 keys, 18940 bytes
+2020/11/10-10:21:29.848 13dc Compacted 1@1 + 1@2 files => 18940 bytes
+2020/11/10-10:21:29.849 13dc compacted to: files[ 0 0 1 0 0 0 0 ]
+2020/11/10-10:21:29.850 13dc Delete type=2 #9
+2020/11/10-10:21:29.850 13dc Delete type=2 #11

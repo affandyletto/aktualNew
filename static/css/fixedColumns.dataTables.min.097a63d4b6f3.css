@@ -1,0 +1,36 @@
+table.DTFC_Cloned thead,
+table.DTFC_Cloned tfoot {
+    background-color: white
+}
+
+div.DTFC_Blocker {
+    background-color: white
+}
+
+div.DTFC_LeftWrapper table.dataTable,
+div.DTFC_RightWrapper table.dataTable {
+    margin-bottom: 0;
+    z-index: 2
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgb(242, 242, 242)
+}
+
+.table-striped tbody tr:nth-of-type(even) {
+    background-color: white;
+}
+
+div.DTFC_RightWrapper .table td, .table th {
+    height: 70px;
+    padding: 0 26px!important;
+}
+
+div.DTFC_LeftBodyWrapper div.DTFC_LeftBodyLiner table.dataTable.no-footer,
+div.DTFC_RightBodyWrapper div.DTFC_RightBodyLiner table.dataTable.no-footer {
+    height: 150px!important;
+}
+
+div.DTFC_RightFootWrapper table.dataTable {
+    margin-top: 7px;
+}

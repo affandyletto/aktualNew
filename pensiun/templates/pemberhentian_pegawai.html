@@ -1,0 +1,451 @@
+<html lang="id">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="description" content="Aktual - Aplikasi Surat Keputusan Virtual PLN">
+    <meta name="author" content="K25D Tech">
+    <title>Aktual - Aplikasi Surat Keputusan Virtual PLN</title>
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/fixedColumns.dataTables.min.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="main-header">
+            <div class="logo-header" data-background-color="blue">
+                <a href="dashboard.html" class="logo white-text">
+                    AKTUAL
+                </a>
+                <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse"
+                    data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon">
+                        <i class="icon-menu"></i>
+                    </span>
+                </button>
+                <button class="topbar-toggler more"><i class="icon-options-vertical"></i></button>
+                <div class="nav-toggle">
+                    <button class="btn btn-toggle toggle-sidebar">
+                        <i class="icon-menu"></i>
+                    </button>
+                </div>
+            </div>
+            <nav class="navbar navbar-header navbar-expand-lg" data-background-color="blue2">
+                <div class="container-fluid">
+                    <div class="collapse" id="search-nav">
+                        <form class="navbar-left navbar-form nav-search m-0">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <button type="submit" class="btn btn-search pr-1">
+                                        <i class="fa fa-search search-icon"></i>
+                                    </button>
+                                </div>
+                                <input type="text" placeholder="Cari ..." class="form-control">
+                            </div>
+                        </form>
+                    </div>
+                    <ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
+                        <li class="nav-item toggle-nav-search hidden-caret">
+                            <a class="nav-link" data-toggle="collapse" href="#search-nav" role="button"
+                                aria-expanded="false" aria-controls="search-nav">
+                                <i class="fa fa-search"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown hidden-caret">
+                            <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"
+                                aria-expanded="false">
+                                <div class="row ml-0">
+                                    <h5 class="text-white mb-0 mr-2 font-weight-bold">Affandy Letto</h5>
+                                    <i class="fa fa-sort-down text-white"></i>
+                                </div>
+                            </a>
+                            <ul class="dropdown-menu dropdown-user animated fadeIn">
+                                <div class="dropdown-user-scroll scrollbar-outer">
+                                    <li>
+                                        <div class="user-box">
+                                            <div class="u-text">
+                                                <h4>Affandy Letto</h4>
+                                                <p class="text-muted">admin@pln.co.id</p>
+                                                <a href="dashboard.html"
+                                                    class="btn btn-xs btn-secondary btn-sm">Dashboard</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="user_profil.html">Ubah Profil</a>
+                                        <a class="dropdown-item" href="user_password.html">Ubah Password</a>
+                                    </li>
+                                    <li>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="login.html">
+                                            Log Out
+                                        </a>
+                                    </li>
+                                </div>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="sidebar sidebar-style-2">
+            <div class="sidebar-wrapper scrollbar scrollbar-inner">
+                <div class="sidebar-content">
+                    <div class="user">
+                        <div class="info">
+                            <a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
+                                <span>
+                                    Affandy Letto
+                                    <span class="user-level">Superadmin</span>
+                                    <span class="caret"></span>
+                                </span>
+                            </a>
+                            <div class="clearfix"></div>
+                            <div class="collapse in" id="collapseExample">
+                                <ul class="nav">
+                                    <li>
+                                        <a href="user_profil.html">
+                                            <span class="link-collapse">Ubah Profil</span>
+                                        </a>
+                                        <a href="user_password.html">
+                                            <span class="link-collapse">Ubah Password</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="login.html">
+                                            <span class="link-collapse">Logout</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="nav nav-primary">
+                        <li class="nav-item">
+                            <a href="dashboard.html">
+                                <i class="fas fa-home"></i>
+                                <p>Dashboard</p>
+                            </a>
+                        </li>
+                        <li class="nav-section">
+                            <span class="sidebar-mini-icon">
+                                <i class="fa fa-ellipsis-h"></i>
+                            </span>
+                            <h4 class="text-section">Menu Admin</h4>
+                        </li>
+                        <li class="nav-item">
+                            <a data-toggle="collapse" href="#mutasi">
+                                <i class="fas fa-handshake"></i>
+                                <p>Mutasi Jabatan</p>
+                                <span class="caret"></span>
+                            </a>
+                            <div class="collapse" id="mutasi">
+                                <ul class="nav nav-collapse">
+                                    <li>
+                                        <a href="sk_mutasi.html">
+                                            <span class="sub-item">SK Mutasi Jabatan</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="surat_penugasan.html">
+                                            <span class="sub-item">Surat Penugasan PLT</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="penilaian.html">
+                                <i class="fas fa-chart-pie"></i>
+                                <p>Penilaian Kriteria Talenta</p>
+                            </a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="pemberhentian_pegawai.html">
+                                <i class="fas fa-user-times"></i>
+                                <p>Pemberhentian Pegawai</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="pegawai.html">
+                                <i class="fas fa-users"></i>
+                                <p>Master Data Pegawai</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="main-panel">
+            <div class="content">
+                <!-- Potong kontennya disini - Awal -->
+                <div class="page-inner">
+                    <div class="page-header">
+                        <h4 class="page-title">Pemberhentian Pegawai</h4>
+                        <ul class="breadcrumbs">
+                            <li class="nav-home">
+                                <a href="index.html">
+                                    <i class="flaticon-home"></i>
+                                </a>
+                            </li>
+                            <li class="separator">
+                                <i class="flaticon-right-arrow"></i>
+                            </li>
+                            <li class="nav-item">
+                                <a href="pemberhentian_pegawai.html">Pemberhentian Pegawai</a>
+                            </li>
+                            <li class="separator">
+                                <i class="flaticon-right-arrow"></i>
+                            </li>
+                            <li class="nav-item">
+                                <a href="pemberhentian_pegawai.html">Lihat Data</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header card-header-tab">
+                                <div class="card-header-title">
+                                    <h4 class="card-title">Pemberhentian Pegawai</h4>
+                                </div>
+                                <div class="btn-actions-pane-right">
+                                    <button type="button" class="btn btn-default mr-2">
+                                        Reload
+                                    </button>
+                                    <a href="pemberhentian_pegawai_create.html" class="btn btn-primary">
+                                        Tambah Data
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <div class="btn-group pb-2">
+                                        <div class="col-md px-0">
+                                            <div class="form-check pr-0">
+                                                <label class="form-check-label">
+                                                    <input class="form-check-input" type="checkbox" id="selectAll">
+                                                    <span class="form-check-sign">Pilih Semua</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md py-1">
+                                            <button type="button" class="btn btn-success px-2 py-1">
+                                                Kirim Notifikasi Whatsapp
+                                            </button>
+                                        </div>
+                                        <div class="col-md py-1 px-0">
+                                            <button type="button" class="btn btn-warning px-2 py-1">
+                                                Kirim Email
+                                            </button>
+                                        </div>
+                                        <div class="col-md py-1">
+                                            <button type="button" class="btn btn-danger px-2 py-1">
+                                                Hapus Data
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <table id="pegawaiTable" class="display table table-striped table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th>No.</th>
+                                                <th>Prev. Personnel</th>
+                                                <th>Personnel Number</th>
+                                                <th>Business Area</th>
+                                                <th width=150>Email</th>
+                                                <th>No. Telepon</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                        <tfoot>
+                                            <tr>
+                                                <th></th>
+                                                <th>No.</th>
+                                                <th>Prev. Personnel</th>
+                                                <th>Personnel Number</th>
+                                                <th>Business Area</th>
+                                                <th width=150>Email</th>
+                                                <th>No. Telepon</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </tfoot>
+                                        <tbody>
+                                            <tr>
+                                                <td><input type="checkbox" class="checkbox" name="id[]" value="123456">
+                                                </td>
+                                                <td>1</td>
+                                                <td>12345667</td>
+                                                <td>SUTARJO BIN SUMENEP RAHAYU</td>
+                                                <td>UID JAWA TIMUR</td>
+                                                <td>sutarjo@yahoo.com</td>
+                                                <td>08112345678</td>
+                                                <td>
+                                                    <div class="d-block my-1">
+                                                        <button type="button" title="Preview"
+                                                            class="btn btn-icon btn-info mb-1">
+                                                            <i class="fa fa-eye"></i>
+                                                        </button>
+                                                        <button type="button" title="Kirim Notifikasi Email"
+                                                            class="btn btn-icon btn-warning mb-1">
+                                                            <i class="fa fa-envelope"></i>
+                                                        </button>
+                                                        <button type="button" title="Kirim Notifikasi Whatsapp"
+                                                            class="btn btn-icon btn-success mb-1">
+                                                            <i class="flaticon-whatsapp"></i>
+                                                        </button>
+                                                        <a href="sk_mutasi_edit.html" title="Edit"
+                                                            class="btn btn-icon btn-secondary mb-1">
+                                                            <i class="fa fa-pencil-alt"></i>
+                                                        </a>
+                                                        <form action="#" method="post" class="mb-0">
+                                                            <button class="btn btn-icon btn-danger" title="Hapus"
+                                                                onclick="return confirm('Anda yakin ingin menghapus data ini?')">
+                                                                <i class="fa fa-trash"></i>
+                                                            </button>
+                                                        </form>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="checkbox" class="checkbox" name="id[]" value="123456">
+                                                </td>
+                                                <td>2</td>
+                                                <td>12345667</td>
+                                                <td>SUTARJO BIN SUMENEP RAHAYU</td>
+                                                <td>UID JAWA TIMUR</td>
+                                                <td>sutarjo@yahoo.com</td>
+                                                <td>08112345678</td>
+                                                <td>
+                                                    <div class="d-block my-1">
+                                                        <button type="button" title="Preview"
+                                                            class="btn btn-icon btn-info mb-1">
+                                                            <i class="fa fa-eye"></i>
+                                                        </button>
+                                                        <button type="button" title="Kirim Notifikasi Email"
+                                                            class="btn btn-icon btn-warning mb-1">
+                                                            <i class="fa fa-envelope"></i>
+                                                        </button>
+                                                        <button type="button" title="Kirim Notifikasi Whatsapp"
+                                                            class="btn btn-icon btn-success mb-1">
+                                                            <i class="flaticon-whatsapp"></i>
+                                                        </button>
+                                                        <a href="sk_mutasi_edit.html" title="Edit"
+                                                            class="btn btn-icon btn-secondary mb-1">
+                                                            <i class="fa fa-pencil-alt"></i>
+                                                        </a>
+                                                        <form action="#" method="post" class="mb-0">
+                                                            <button class="btn btn-icon btn-danger" title="Hapus"
+                                                                onclick="return confirm('Anda yakin ingin menghapus data ini?')">
+                                                                <i class="fa fa-trash"></i>
+                                                            </button>
+                                                        </form>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Potong kontennya disini - Akhir -->
+            </div>
+            <footer class="footer">
+                <div class="container-fluid">
+                    <nav class="pull-left">
+                        <ul class="nav">
+                            <li class="nav-item">
+                                Aplikasi Surat Keputusan Virtual
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="copyright ml-auto">
+                        Copyright &copy; Aktual 2020</a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+
+<script src="assets/js/core/jquery.3.2.1.min.js"></script>
+<script src="assets/js/core/bootstrap.min.js"></script>
+<script src="assets/js/core/popper.min.js"></script>
+<script src="assets/js/plugin/jquery.scrollbar.min.js"></script>
+<script src="assets/js/style.min.js"></script>
+<script src="assets/js/plugin/jquery-ui.min.js"></script>
+<script src="assets/js/plugin/webfont.min.js"></script>
+<script src="assets/js/plugin/moment.min.js"></script>
+<script src="assets/js/plugin/datetimepicker.min.js"></script>
+<script src="assets/js/plugin/datatables.min.js"></script>
+<script src="assets/js/plugin/dataTables.fixedColumns.min.js"></script>
+<script>
+    var table;
+    $(document).ready(function () {
+        table = $("#pegawaiTable").DataTable({
+            "oLanguage": {
+                "sLengthMenu": "Tampilkan _MENU_ data",
+                "sZeroRecords": "Belum ada data apapun",
+                "sInfoEmpty": "Menampilkan 0 data",
+                "sInfoFiltered": "",
+                "sInfo": "Menampilkan _START_ - _END_ dari _TOTAL_ data",
+                "sSearch": "Cari: ",
+                "oPaginate": {
+                    "sNext": "Selanjutnya",
+                    "sPrevious": "Sebelumnya",
+                }
+            },
+            stateSave: true,
+            scrollX: true,
+            scrollY: "1000px",
+            scrollCollapse: true,
+            fixedColumns: {
+                leftColumns: 0,
+                rightColumns: 1
+            }
+        });
+    })
+    $("#selectAll").on("click", function (e) {
+        $('.checkbox').prop('checked', this.checked);
+    });
+    $("#pegawaiTable").on("change", function (e) {
+        var changed = e.target,
+            selectAll = document.getElementById('selectAll'),
+            checkboxes = Array.prototype.slice.call(
+                this.querySelectorAll('input[type=checkbox]')
+            ).filter(function (check) {
+                return check !== selectAll;
+            });
+
+        if (changed === selectAll) {
+            checkboxes.forEach(function (check) {
+                check.checked = selectAll.checked;
+            });
+        } else {
+            var allChecked = checkboxes.filter(function (check) {
+                return check.checked;
+            }).length === checkboxes.length;
+
+            selectAll.checked = allChecked;
+        }
+    });
+</script>
+<script>
+    var test =
+        WebFont.load({
+            google: { "families": ["Lato:300,400,700,900"] },
+            custom: { "families": ["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ["assets/css/fonts.min.css"] },
+            active: function () {
+                sessionStorage.fonts = true;
+            }
+        });
+</script>
+
+</html>

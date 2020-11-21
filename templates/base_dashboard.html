@@ -1,0 +1,56 @@
+{% load static %}
+{% include 'head.html' %}
+<div class="panel-header bg-primary-gradient">
+                        <div class="page-inner py-5">
+                            <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
+                                <div>
+                                    <h2 class="text-white pb-2 fw-bold">{% block nama %}{% endblock nama %}</h2>
+                                    <h5 class="text-white op-7 mb-2">Selamat datang di Aplikasi Surat Keputusan Virtual (Aktual)</h5>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="page-inner mt--5">
+                        <div class="row mt--2">
+                            {% if messages %}
+                            <ul class="messages">
+                            {% for message in messages %}
+                            <li>
+                                <div class="alert alert-success"><strong>{{ message }}</strong></div>
+                            </li>
+                            {% endfor %}
+                            </ul>
+                        {% endif %}
+                            <div class="col-md-6">
+                                <div class="card full-height">
+                                    <div class="card-body">
+                                        <div class="card-title">Data</div>
+                                        <div class="card-category">Data yang sedang diproses</div> 
+                                        <h1></h1>
+                                        <h2>SK Mutasi yang sedang diproses  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: {{mutate.count}}</h2>
+                                        <h2>Surat penugasan PLT yang sedang diproses &nbsp;: {{plte.count}}</h2>
+                                        <h2>SK Talenta yang sedang diproses &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: {{talent.count}}</h2>
+                                        <h2>SK Pensiun yang sedang diproses &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: {{pensi.count}}</h2>                                     
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card full-height">
+                                    <div class="card-body">
+                                        <div class="card-title">Total</div>
+                                        <div class="card-category">Total Data</div>  
+                                        <h1></h1>           
+                                        <h2>SK Mutasi   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: {{mutateall.count}}</h2>
+                                        <h2>Surat penugasan PLT  : {{plteall.count}}</h2>
+                                        <h2>SK Talenta &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  : {{talentall.count}}</h2>
+                                        <h2>SK Pensiun &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  : {{pensiall.count}}</h2>
+                                        <h2>Total jumlah pegawai : {{pegg.count}}</h2>          
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% include 'footer.html' %}

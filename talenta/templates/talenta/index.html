@@ -1,0 +1,58 @@
+{% extends 'base_talenta.html' %}
+
+{% block data %}
+{% for talenta in object_list %}
+<tr>
+    <td><input type="checkbox" class="checkbox" name="cek" value="{{talenta.nipeg}}">
+    </td>
+    <td>{{ forloop.counter }}</td>
+    <td>{{talenta.nipeg}}</td>
+    <td>{{talenta.nama}}</td>
+    <td>{{talenta.jenjangMayoritas}}</td>
+    <td>{{talenta.jabatanSekarang}}</td>
+    <td>{{talenta.jenjangSebelum}}</td>
+    <td>{{talenta.gradeSebelum}}</td>
+    <td>{{talenta.skalaGajiSebelum}}</td>
+    <td>{{talenta.tglGrade}}</td>
+    <td>{{talenta.g1}}</td>
+    <td>{{talenta.g2}}</td>
+    <td>{{talenta.g3}}</td>
+    <td>{{talenta.g4}}</td>
+    <td>{{talenta.g5}}</td>
+    <td>{{talenta.g6}}</td>
+    <td>{{talenta.g7}}</td>
+    <td>{{talenta.g8}}</td>
+    <td>{{talenta.jenjangSesudah}}</td>
+    <td>{{talenta.gradeSesudah}}</td>
+    <td>{{talenta.skalaGajiSesudah}}</td>
+    <td>{{talenta.tglNaik}}</td>
+    <td>{{talenta.naikPer}}</td>
+    <td>{{talenta.keterangan}}</td>
+    <td>{{talenta.noSk}}</td>
+    <td>{{talenta.tglSkKenaikan}}</td>
+    <td>{{talenta.noSkNaik}}</td>
+    <td>{{talenta.peg.noHp}}</td>
+    <td>{{talenta.peg.email}}</td>
+    {% if talenta.terkirim %}
+        <td> Telah Dikirim </td>
+    {% else %}
+    <td> Belum Dikirim </td>
+    {% endif %}
+    <td>
+        <div class="d-block my-1">
+
+	        <a href="{% url 'talenta:pdf' talenta.id %}" title="Preview" class="btn btn-icon btn-info mb-1">
+	            <i class="fa fa-eye"></i>
+	        </a>
+
+	        <a href="{% url 'talenta:edit' pk=talenta.id %}" title="Edit" class="btn btn-icon btn-secondary mb-1">
+	            <i class="fa fa-pencil-alt"></i>
+	        </a>
+	        <a href="{% url 'talenta:delete' pk=talenta.id %}" title="Hapus" class="btn btn-icon btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus data talenta ini ?');">
+	            <i class="fa fa-trash"></i>
+	        </a>
+	    </div>
+    </td>
+</tr>
+{% endfor %}
+{% endblock data %}

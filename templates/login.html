@@ -1,0 +1,77 @@
+{% load static %}
+<html lang="id">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="description" content="Aktual - Aplikasi Surat Keputusan Virtual PLN">
+    <meta name="author" content="K25D Tech">
+    <title>Aktual - Aplikasi Surat Keputusan Virtual PLN</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        .login{
+        background: url("{% static 'image/background.jpg' %}");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+    </style>
+</head>
+
+<body class="login">
+    <div class="wrapper wrapper-login">
+        <div class="container container-login animated fadeIn">
+            <h3 class="text-center">Login ke AKTUAL</h3>
+            <div class="login-form text-white">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="username" class="placeholder"><b>Username</b></label>
+                        <input id="username" name="username" type="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="placeholder"><b>Password</b></label>
+                        <a href="" class="link float-right">Lupa Password ?</a>
+                        <div class="position-relative">
+                            <input id="password" name="password" type="password" class="form-control" required>
+                            <div class="show-password">
+                                <i class="icon-eye"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group form-action-d-flex mb-3">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="rememberme">
+                            <label class="custom-control-label m-0" for="rememberme">Ingat saya</label>
+                        </div>
+                        <button class="btn btn-primary col-md-5 float-right mt-3 mt-sm-0 fw-bold" type="submit">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="{% static 'js/core/jquery.3.2.1.min.js' %}"></script>
+<script src="{% static 'js/core/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/core/popper.min.js' %}"></script>
+<script src="{% static 'js/plugin/jquery.scrollbar.min.js' %}"></script>
+<script src="{% static 'js/style.min.js' %}"></script>
+<script src="{% static 'js/plugin/jquery-ui.min.js' %}"></script>
+<script src="{% static 'js/plugin/webfont.min.js' %}"></script>
+<script>
+    var test =
+        WebFont.load({
+            google: { "families": ["Lato:300,400,700,900"] },
+            custom: { "families": ["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ["{% static 'css/fonts.min.css' %}"] },
+            active: function () {
+                sessionStorage.fonts = true;
+            }
+        });
+</script>
+
+</html>

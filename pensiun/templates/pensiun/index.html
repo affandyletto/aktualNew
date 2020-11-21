@@ -1,0 +1,53 @@
+{% extends 'base_pensiun.html' %}
+{% block pensiun %}
+
+{% for pensiun in object_list %}
+<tr>
+    <td><input type="checkbox" class="checkbox" name="cek" value="{{pensiun.nipeg}}">
+    </td>
+    <td></td>
+        <td>{{pensiun.nipeg}}</td>
+
+    {% if pensiun.peg.nama %}    
+        <td>{{pensiun.peg.nama}}</td>
+    {% else %}
+        <td>No Data</td>
+    {% endif %}
+
+    {% if pensiun.peg.unit %}
+        <td>{{pensiun.peg.unit}}</td>
+    {% else %}
+        <td>No Data</td>
+    {% endif %}
+
+    {% if pensiun.peg.email %}
+        <td>{{pensiun.peg.email}}</td>
+    {% else %}
+        <td>No Data</td>
+    {% endif %}
+    {% if pensiun.peg.noHp %}
+        <td>{{pensiun.peg.noHp}}</td>
+    {% else %}
+        <td>No Data</td>
+    {% endif %}
+
+    <td>
+            {% if pensiun.file %}  
+            <small class="text-muted">{{pensiun.file.url}}</small> <br>         
+            <a href="{{pensiun.file.url}}" title="Preview" class=" btn btn-success">
+                Preview
+            </a>
+            {% endif %}
+            <!--
+            <a href="{% url 'pensiun:edit' pk=pensiun.id %}" title="Edit" class="btn btn-icon btn-secondary mb-1">
+                <i class="fa fa-pencil-alt"></i>
+            </a>
+            
+            <a href="{% url 'pensiun:delete' pk=pensiun.id %}" title="Hapus" class="btn btn-icon btn-danger">
+                <i class="fa fa-trash"></i>
+            </a>
+            -->
+    </td>
+</tr>
+{% endfor %}
+{% endblock pensiun %}

@@ -1,0 +1,118 @@
+{% load static %}
+{% include 'head.html' %}
+<div class="page-inner">
+                    <div class="page-header">
+                        <h4 class="page-title">Pemberhentian Pegawai</h4>
+                        <ul class="breadcrumbs">
+                            <li class="nav-home">
+                                <a href="index.html">
+                                    <i class="flaticon-home"></i>
+                                </a>
+                            </li>
+                            <li class="separator">
+                                <i class="flaticon-right-arrow"></i>
+                            </li>
+                            <li class="nav-item">
+                                <a href="pemberhentian_pegawai.html">Pemberhentian Pegawai</a>
+                            </li>
+                            <li class="separator">
+                                <i class="flaticon-right-arrow"></i>
+                            </li>
+                            <li class="nav-item">
+                                <a href="pemberhentian_pegawai.html">Lihat Data</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-12">
+                        {% if messages %}
+                            <ul class="messages">
+                            {% for message in messages %}
+                            <li>
+                                <div class="alert alert-success"><strong>{{ message }}</strong></div>
+                            </li>
+                            {% endfor %}
+                            </ul>
+                        {% endif %}
+                        <div class="card">
+                            <div class="card-header card-header-tab">
+                                <div class="card-header-title">
+                                    <h4 class="card-title">Pemberhentian Pegawai</h4>
+                                </div>
+                                <div class="btn-actions-pane-right">
+                                    <a href="{% url 'pensiun:relod' 'pensiun' %}" class="btn btn-warning">
+                                        Reload
+                                    </a>
+                                    <a href="{% url 'pensiun:tambah' %}" class="btn btn-primary">
+                                        Tambah Data
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <div class="btn-group pb-2">
+                                        <div class="col-md px-0">
+                                            <div class="form-check pr-0">
+                                                <label class="form-check-label">
+                                                    <input class="form-check-input" type="checkbox" id="selectAll">
+                                                    <span class="form-check-sign">Pilih Semua</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md py-1">
+                                            <button type="submit" name="kirimWa" form='pensiunForm' class="btn btn-success px-2 py-1">
+                                                Kirim Notifikasi Whatsapp
+                                            </button>
+                                        </div>
+                                        <div class="col-md py-1 px-0">
+                                            <button type="submit" name="kirim" form='pensiunForm' class="btn btn-warning px-2 py-1">
+                                                Kirim Email
+                                            </button>
+                                        </div>
+                                        <!--
+                                        <div class="col-md py-1">
+                                            <button type="submit" name="hapus" form='pensiunForm' class="btn btn-danger px-2 py-1">
+                                                Hapus Data
+                                            </button>
+                                        </div>
+                                        -->
+                                    </div>
+                                    <form action='kirim' method='POST' id="pensiunForm">
+                                         {% csrf_token %}
+                                    <table id="pegawaiTable" class="display table table-striped table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th>No.</th>
+                                                <th>Nipeg</th>
+                                                <th>Nama </th>
+                                                <th>Unit</th>
+                                                <th width=150>Email</th>
+                                                <th>No. HP</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                        <tfoot>
+                                            <tr>
+                                                <th></th>
+                                                <th>No.</th>
+                                                <th>Nipeg</th>
+                                                <th>Nama </th>
+                                                <th>Unit</th>
+                                                <th width=150>Email</th>
+                                                <th>No HP</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </tfoot>
+                                        <tbody>
+                                            {% block pensiun %}
+                                            
+                                            {% endblock pensiun %}
+                                        </tbody>
+                                    </table>
+                                </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    {% include 'footer.html' %}

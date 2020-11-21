@@ -1,0 +1,36 @@
+{% extends 'base_plt.html' %}
+
+{% block plt %}
+{% for plt in object_list %}
+<tr>
+    <td><input type="checkbox" class="checkbox" name="cek" value="{{plt.nipeg}}">
+    </td>
+    <td>{{ forloop.counter }}</td>
+    <td>{{plt.nipeg}}</td>
+    <td>{{plt.nama}}</td>
+    <td>{{plt.nomorPLT}}</td>
+    <td>{{plt.jabatanTanpaPLT}}</td>
+    <td>{{plt.jabatanPLT}}</td>
+    <td>{{plt.email}}</td>
+    <td>{{plt.noHp}}</td>
+        {% if plt.terkirim %}
+            <td>Telah Dikirim</td>
+        {% else %}
+        <td>Belum Dikirim</td>
+        {% endif %}
+    <td>
+            <div class="d-block my-1">
+                <a href="{% url 'mutasi:pdf_plt' plt.id %}" title="Preview" class="btn btn-icon btn-info mb-1">
+                        <i class="fa fa-eye"></i>
+                </a>
+                <a href="{% url 'mutasi:edit_plt' pk=plt.id %}" title="Edit" class="btn btn-icon btn-secondary mb-1">
+                        <i class="fa fa-pencil-alt"></i>
+                    </a>
+                <a href="{% url 'mutasi:deletePLT' pk=plt.id %}" title="Hapus" class="btn btn-icon btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus data PLT ini ?');">
+                <i class="fa fa-trash"></i>
+            </a>
+            </div>
+    </td>
+</tr>
+{% endfor %}
+{% endblock plt %}

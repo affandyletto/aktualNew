@@ -1,0 +1,30 @@
+{% extends 'pegawai.html' %}
+{% block data %}
+{% for pegawai in object_list %}
+<tr>
+    <td><input type="checkbox" class="checkbox" name="cek" value="{{pegawai.nipeg}}">
+    </td>
+    <td>{{ forloop.counter }}</td>
+    <td>{{pegawai.nipeg}}</td>
+    <td>{{pegawai.nama}}</td>
+    <td>{{pegawai.unit}}</td>
+    <td>{{pegawai.email}}</td>
+    <td>{{pegawai.noHp}}</td>
+    <td>
+        <div class="d-block my-1">
+            <button type="button" title="Preview"
+                class="btn btn-icon btn-info mb-1">
+                <i class="fa fa-eye"></i>
+            </button>
+            <a href="{% url 'pegawai:edit' pk=pegawai.id %}" title="Edit"
+                class="btn btn-icon btn-secondary mb-1">
+                <i class="fa fa-pencil-alt"></i>
+            </a>
+            <a href="{% url 'pegawai:delete' pk=pegawai.id %}" title="Hapus" class="btn btn-icon btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus data pegawai ini ?');">
+                <i class="fa fa-trash"></i>
+            </a>
+        </div>
+    </td>
+</tr>
+{% endfor %}
+{% endblock data %}

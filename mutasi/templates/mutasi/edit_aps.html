@@ -1,0 +1,13 @@
+{% extends "sk_mutasi_edit.html" %}
+{% block form %}
+<form action="" method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+        {{ form.as_p }}
+    </div>
+    <div>
+        <a href="{% url 'mutasi:aps' %}" class="btn btn-default mr-2">Batal</a>
+        <button type="submit" class="btn btn-primary" value="Update">Simpan</button>
+    </div>
+</form>
+{% endblock form %}

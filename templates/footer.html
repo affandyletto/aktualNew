@@ -1,0 +1,380 @@
+{% load static %}
+</div>
+            <footer class="footer">
+                <div class="container-fluid">
+                    <nav class="pull-left">
+                        <ul class="nav">
+                            <li class="nav-item">
+                                Aplikasi Surat Keputusan Virtual
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="copyright ml-auto">
+                        Copyright &copy; Aktual 2020</a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+
+<script src="{% static 'celery_progress/celery_progress.js' %}"></script>
+<script src="{% static 'js/core/jquery.3.2.1.min.js' %}"></script>
+<script src="{% static 'js/core/popper.min.js' %}"></script>
+<script src="{% static 'js/core/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/plugin/jquery.scrollbar.min.js' %}"></script>
+<script src="{% static 'js/style.min.js' %}"></script>
+<script src="{% static 'js/plugin/jquery-ui.min.js' %}"></script>
+<script src="{% static 'js/plugin/webfont.min.js' %}"></script>
+<script src="{% static 'js/plugin/moment.min.js' %}"></script>
+<script src="{% static 'js/plugin/datetimepicker.min.js' %}"></script>
+<script src="{% static 'js/plugin/datatables.min.js' %}"></script>
+<script src="{% static 'js/plugin/dataTables.fixedColumns.min.js' %}"></script>
+<script src="{% static 'js/plugin/chart.min.js' %}"></script>
+<script src="{% static 'js/plugin/circles.min.js' %}"></script>
+
+<script>
+    var table;
+    $(document).ready(function () {
+        table = $("#kriteria").DataTable({
+            "oLanguage": {
+                "sLengthMenu": "Tampilkan _MENU_ data",
+                "sZeroRecords": "Belum ada data apapun",
+                "sInfoEmpty": "Menampilkan 0 data",
+                "sInfoFiltered": "",
+                "sInfo": "Menampilkan _START_ - _END_ dari _TOTAL_ data",
+                "sSearch": "Cari: ",
+                "oPaginate": {
+                    "sNext": "Selanjutnya",
+                    "sPrevious": "Sebelumnya",
+                }
+            },
+            stateSave: true,
+            scrollX: true,
+            scrollY: true,
+            scrollCollapse: true,
+        });
+    })
+    $("#selectAll").on("click", function (e) {
+        $('.checkbox').prop('checked', this.checked);
+    });
+    $("#kriteria").on("change", function (e) {
+        var changed = e.target,
+            selectAll = document.getElementById('selectAll'),
+            checkboxes = Array.prototype.slice.call(
+                this.querySelectorAll('input[type=checkbox]')
+            ).filter(function (check) {
+                return check !== selectAll;
+            });
+
+        if (changed === selectAll) {
+            checkboxes.forEach(function (check) {
+                check.checked = selectAll.checked;
+            });
+        } else {
+            var allChecked = checkboxes.filter(function (check) {
+                return check.checked;
+            }).length === checkboxes.length;
+
+            selectAll.checked = allChecked;
+        }
+    });
+</script>
+
+<script>
+    var table;
+    $(document).ready(function () {
+        table = $("#penilaianTable").DataTable({
+            "oLanguage": {
+                "sLengthMenu": "Tampilkan _MENU_ data",
+                "sZeroRecords": "Belum ada data apapun",
+                "sInfoEmpty": "Menampilkan 0 data",
+                "sInfoFiltered": "",
+                "sInfo": "Menampilkan _START_ - _END_ dari _TOTAL_ data",
+                "sSearch": "Cari: ",
+                "oPaginate": {
+                    "sNext": "Selanjutnya",
+                    "sPrevious": "Sebelumnya",
+                }
+            },
+            stateSave: true,
+            scrollX: true,
+            scrollY: true,
+            scrollCollapse: true,
+        });
+    })
+    $("#selectAll").on("click", function (e) {
+        $('.checkbox').prop('checked', this.checked);
+    });
+    $("#penilaianTable").on("change", function (e) {
+        var changed = e.target,
+            selectAll = document.getElementById('selectAll'),
+            checkboxes = Array.prototype.slice.call(
+                this.querySelectorAll('input[type=checkbox]')
+            ).filter(function (check) {
+                return check !== selectAll;
+            });
+
+        if (changed === selectAll) {
+            checkboxes.forEach(function (check) {
+                check.checked = selectAll.checked;
+            });
+        } else {
+            var allChecked = checkboxes.filter(function (check) {
+                return check.checked;
+            }).length === checkboxes.length;
+
+            selectAll.checked = allChecked;
+        }
+    });
+</script>
+
+<script>
+    var table;
+    $(document).ready(function () {
+        table = $("#skTable").DataTable({
+            "oLanguage": {
+                "sLengthMenu": "Tampilkan _MENU_ data",
+                "sZeroRecords": "Belum ada data apapun",
+                "sInfoEmpty": "Menampilkan 0 data",
+                "sInfoFiltered": "",
+                "sInfo": "Menampilkan _START_ - _END_ dari _TOTAL_ data",
+                "sSearch": "Cari: ",
+                "oPaginate": {
+                    "sNext": "Selanjutnya",
+                    "sPrevious": "Sebelumnya",
+                }
+            },
+            stateSave: true,
+            scrollX: true,
+            scrollY: true,
+            scrollCollapse: true,
+            
+        });
+    })
+    $("#selectAll").on("click", function (e) {
+        $('.checkbox').prop('checked', this.checked);
+    });
+    $("#skTable").on("change", function (e) {
+        var changed = e.target,
+            selectAll = document.getElementById('selectAll'),
+            checkboxes = Array.prototype.slice.call(
+                this.querySelectorAll('input[type=checkbox]')
+            ).filter(function (check) {
+                return check !== selectAll;
+            });
+
+        if (changed === selectAll) {
+            checkboxes.forEach(function (check) {
+                check.checked = selectAll.checked;
+            });
+        } else {
+            var allChecked = checkboxes.filter(function (check) {
+                return check.checked;
+            }).length === checkboxes.length;
+
+            selectAll.checked = allChecked;
+        }
+    });
+</script>
+<script>
+    var table;
+    $(document).ready(function () {
+        table = $("#ssTable").DataTable({
+            "oLanguage": {
+                "sLengthMenu": "Tampilkan _MENU_ data",
+                "sZeroRecords": "Belum ada data apapun",
+                "sInfoEmpty": "Menampilkan 0 data",
+                "sInfoFiltered": "",
+                "sInfo": "Menampilkan _START_ - _END_ dari _TOTAL_ data",
+                "sSearch": "Cari: ",
+                "oPaginate": {
+                    "sNext": "Selanjutnya",
+                    "sPrevious": "Sebelumnya",
+                }
+            },
+            stateSave: true,
+            scrollX: true,
+            scrollY: true,
+            scrollCollapse: true,
+        });
+    })
+    $("#selectAll").on("click", function (e) {
+        $('.checkbox').prop('checked', this.checked);
+    });
+    $("#ssTable").on("change", function (e) {
+        var changed = e.target,
+            selectAll = document.getElementById('selectAll'),
+            checkboxes = Array.prototype.slice.call(
+                this.querySelectorAll('input[type=checkbox]')
+            ).filter(function (check) {
+                return check !== selectAll;
+            });
+
+        if (changed === selectAll) {
+            checkboxes.forEach(function (check) {
+                check.checked = selectAll.checked;
+            });
+        } else {
+            var allChecked = checkboxes.filter(function (check) {
+                return check.checked;
+            }).length === checkboxes.length;
+
+            selectAll.checked = allChecked;
+        }
+    });
+</script>
+<script>
+    var table;
+    $(document).ready(function () {
+        table = $("#stTable").DataTable({
+            "oLanguage": {
+                "sLengthMenu": "Tampilkan _MENU_ data",
+                "sZeroRecords": "Belum ada data apapun",
+                "sInfoEmpty": "Menampilkan 0 data",
+                "sInfoFiltered": "",
+                "sInfo": "Menampilkan _START_ - _END_ dari _TOTAL_ data",
+                "sSearch": "Cari: ",
+                "oPaginate": {
+                    "sNext": "Selanjutnya",
+                    "sPrevious": "Sebelumnya",
+                }
+            },
+            stateSave: true,
+            scrollX: true,
+            scrollY: true,
+            scrollCollapse: true,
+        });
+    })
+    $("#selectAll").on("click", function (e) {
+        $('.checkbox').prop('checked', this.checked);
+    });
+    $("#stTable").on("change", function (e) {
+        var changed = e.target,
+            selectAll = document.getElementById('selectAll'),
+            checkboxes = Array.prototype.slice.call(
+                this.querySelectorAll('input[type=checkbox]')
+            ).filter(function (check) {
+                return check !== selectAll;
+            });
+
+        if (changed === selectAll) {
+            checkboxes.forEach(function (check) {
+                check.checked = selectAll.checked;
+            });
+        } else {
+            var allChecked = checkboxes.filter(function (check) {
+                return check.checked;
+            }).length === checkboxes.length;
+
+            selectAll.checked = allChecked;
+        }
+    });
+</script>
+
+<script>
+    var table;
+    $(document).ready(function () {
+        table = $("#pegawaiTable").DataTable({
+            "oLanguage": {
+                "sLengthMenu": "Tampilkan _MENU_ data",
+                "sZeroRecords": "Belum ada data apapun",
+                "sInfoEmpty": "Menampilkan 0 data",
+                "sInfoFiltered": "",
+                "sInfo": "Menampilkan _START_ - _END_ dari _TOTAL_ data",
+                "sSearch": "Cari: ",
+                "oPaginate": {
+                    "sNext": "Selanjutnya",
+                    "sPrevious": "Sebelumnya",
+                }
+            },
+            stateSave: true,
+            scrollX: true,
+            scrollY: true,
+            scrollCollapse: true,
+            
+        });
+    })
+    $("#selectAll").on("click", function (e) {
+        $('.checkbox').prop('checked', this.checked);
+    });
+    $("#pegawaiTable").on("change", function (e) {
+        var changed = e.target,
+            selectAll = document.getElementById('selectAll'),
+            checkboxes = Array.prototype.slice.call(
+                this.querySelectorAll('input[type=checkbox]')
+            ).filter(function (check) {
+                return check !== selectAll;
+            });
+
+        if (changed === selectAll) {
+            checkboxes.forEach(function (check) {
+                check.checked = selectAll.checked;
+            });
+        } else {
+            var allChecked = checkboxes.filter(function (check) {
+                return check.checked;
+            }).length === checkboxes.length;
+
+            selectAll.checked = allChecked;
+        }
+    });
+</script>
+    <script>
+        Circles.create({
+            id:'circles-1',
+            radius:45,
+            value:10,
+            maxValue:100,
+            width:7,
+            text: 10,
+            colors:['#f1f1f1', '#FF9E27'],
+            duration:400,
+            wrpClass:'circles-wrp',
+            textClass:'circles-text',
+            styleWrapper:true,
+            styleText:true
+        })
+
+        Circles.create({
+            id:'circles-2',
+            radius:45,
+            value:53,
+            maxValue:100,
+            width:7,
+            text: 53,
+            colors:['#f1f1f1', '#2BB930'],
+            duration:400,
+            wrpClass:'circles-wrp',
+            textClass:'circles-text',
+            styleWrapper:true,
+            styleText:true
+        })
+
+        Circles.create({
+            id:'circles-3',
+            radius:45,
+            value:20,
+            maxValue:100,
+            width:7,
+            text: 20,
+            colors:['#f1f1f1', '#F25961'],
+            duration:400,
+            wrpClass:'circles-wrp',
+            textClass:'circles-text',
+            styleWrapper:true,
+            styleText:true
+        })
+    </script>
+<script>
+    var test =
+        WebFont.load({
+            google: { "families": ["Lato:300,400,700,900"] },
+            custom: { "families": ["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ["{% static 'css/fonts.min.css' %}"] },
+            active: function () {
+                sessionStorage.fonts = true;
+            }
+        });
+</script>
+
+</html>

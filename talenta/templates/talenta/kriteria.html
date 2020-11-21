@@ -1,0 +1,94 @@
+{% extends 'baseKriteria.html' %}
+
+{% block data %}
+<thead>
+	<tr>
+	    <th></th>
+	    <th>No.</th>
+	    <th>NIP</th>
+	    <th>Nama</th>
+	    <th>Grade</th>
+	    <th>{{talent.tglA.tgl8}}</th>
+	    <th>{{talent.tglA.tgl7}}</th>
+	    <th>{{talent.tglA.tgl6}}</th>
+	    <th>{{talent.tglA.tgl5}}</th>
+	    <th>{{talent.tglA.tgl4}}</th>
+	    <th>{{talent.tglA.tgl3}}</th>
+	    <th>{{talent.tglA.tgl2}}</th>
+	    <th>{{talent.tglA.tgl1}}</th>
+	    <th>Nomor Sk</th>
+	    <th>Tanggal SK</th>
+	    <th>No HP</th>
+	    <th>Email</th>
+	    <th width=70>Status PDF</th>
+	    <th>Aksi</th>
+	</tr>
+</thead>
+<tfoot>
+    <tr>
+        <th></th>
+        <th>No.</th>
+        <th>NIP</th>
+        <th>Nama</th>
+        <th>Grade</th>
+        <th>{{talent.tgl.tgl8}}</th>
+	    <th>{{talent.tgl.tgl7}}</th>
+	    <th>{{talent.tgl.tgl6}}</th>
+	    <th>{{talent.tgl.tgl5}}</th>
+	    <th>{{talent.tgl.tgl4}}</th>
+	    <th>{{talent.tgl.tgl3}}</th>
+	    <th>{{talent.tgl.tgl2}}</th>
+	    <th>{{talent.tgl.tgl1}}</th>
+        <th>Nomor Sk</th>
+	    <th>Tanggal SK</th>
+        <th>No HP</th>
+        <th>Email</th>
+        <th width=70>Status PDF</th>
+        <th>Aksi</th>
+    </tr>
+</tfoot>
+
+
+<tbody>
+{% for kriteriaTalenta in talent.talenta %}
+<tr>
+    <td><input type="checkbox" class="checkbox" name="cek" value="{{kriteriaTalenta.nipeg}}">
+    </td>
+    <td>{{ forloop.counter }}</td>
+    <td>{{kriteriaTalenta.nipeg}}</td>
+    <td>{{kriteriaTalenta.nama}}</td>
+    <td>{{kriteriaTalenta.grade}}</td>
+    <td>{{kriteriaTalenta.g8}}</td>
+    <td>{{kriteriaTalenta.g7}}</td>
+    <td>{{kriteriaTalenta.g6}}</td>
+    <td>{{kriteriaTalenta.g5}}</td>
+    <td>{{kriteriaTalenta.g4}}</td>
+    <td>{{kriteriaTalenta.g3}}</td>
+    <td>{{kriteriaTalenta.g2}}</td>
+    <td>{{kriteriaTalenta.g1}}</td>
+    <td>{{kriteriaTalenta.noSk}}</td>
+    <td>{{kriteriaTalenta.tglSk}}</td>
+    <td>{{kriteriaTalenta.peg.noHp}}</td>
+    <td>{{kriteriaTalenta.peg.email}}</td>
+    {% if kriteriaTalenta.terkirim %}
+        <td> Telah Dikirim </td>
+    {% else %}
+    <td> Belum Dikirim </td>
+    {% endif %}
+    <td>
+        <div class="d-block my-1">
+	        <a href="{% url 'talenta:PDFKriteria' kriteriaTalenta.id %}" title="Preview" class="btn btn-icon btn-info mb-1">
+	            <i class="fa fa-eye"></i>
+	        </a>
+
+	        <a href="{% url 'talenta:kriteriaEdit' pk=kriteriaTalenta.id %}" title="Edit" class="btn btn-icon btn-secondary mb-1">
+	            <i class="fa fa-pencil-alt"></i>
+	        </a>
+	        <a href="{% url 'talenta:kriteriaDelete' pk=kriteriaTalenta.id %}" title="Hapus" class="btn btn-icon btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus data talenta ini ?');">
+	            <i class="fa fa-trash"></i>
+	        </a>
+	    </div>
+    </td>
+</tr>
+{% endfor %}
+{% endblock data %}

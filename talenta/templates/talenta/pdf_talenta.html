@@ -1,0 +1,737 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            td {
+                vertical-align: top;
+            }
+            body {
+                margin: 0;
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+                font-size: 0.8rem;
+                font-weight: 400;
+                line-height: 1.3;
+                color: #212529;
+                text-align: justify;
+                text-rendering: geometricPrecision;
+                background: url("{% static 'image/bg_sk2.jpg' %}") no-repeat; 
+                background-size:250px;
+                background-position: center;
+            }
+            .text-center {
+                text-align: center!important;
+            }
+            .text-justify {
+                text-align: justify!important;
+            }
+            .text-white {
+                color: #fff!important;
+            }
+            .font-italic {
+                font-style: italic;
+            }
+            .font-weight-bold {
+                font-weight: 700!important;
+            }
+            p {
+                margin-top: 0;
+                margin-bottom: 1rem;
+            }
+            .pull-right {
+                float: right;
+            }
+            .lh-1 {
+                line-height: 1;
+            }
+            dl, ol, ul {
+                margin-top: 0;
+                margin-bottom: 1rem;
+            }
+            .m-0 {
+                margin: 0!important
+            }
+            .mt-0, .my-0 {
+                margin-top: 0!important
+            }
+            .mr-0, .mx-0 {
+                margin-right: 0!important
+            }
+            .mb-0, .my-0 {
+                margin-bottom: 0!important
+            }
+            .ml-0, .mx-0 {
+                margin-left: 0!important
+            }
+            .m-1 {
+                margin: .25rem!important
+            }
+            .mt-1, .my-1 {
+                margin-top: .25rem!important
+            }
+            .mr-1, .mx-1 {
+                margin-right: .25rem!important
+            }
+            .mb-1, .my-1 {
+                margin-bottom: .25rem!important
+            }
+            .ml-1, .mx-1 {
+                margin-left: .25rem!important
+            }
+            .m-2 {
+                margin: .5rem!important
+            }
+            .mt-2, .my-2 {
+                margin-top: .5rem!important
+            }
+            .mr-2, .mx-2 {
+                margin-right: .5rem!important
+            }
+            .mb-2, .my-2 {
+                margin-bottom: .5rem!important
+            }
+            .ml-2, .mx-2 {
+                margin-left: .5rem!important
+            }
+            .m-3 {
+                margin: 1rem!important
+            }
+            .mt-3, .my-3 {
+                margin-top: 1rem!important
+            }
+            .mr-3, .mx-3 {
+                margin-right: 1rem!important
+            }
+            .mb-3, .my-3 {
+                margin-bottom: 1rem!important
+            }
+            .ml-3, .mx-3 {
+                margin-left: 1rem!important
+            }
+            .m-4 {
+                margin: 1.5rem!important
+            }
+            .mt-4, .my-4 {
+                margin-top: 1.5rem!important
+            }
+            .mr-4, .mx-4 {
+                margin-right: 1.5rem!important
+            }
+            .mb-4, .my-4 {
+                margin-bottom: 1.5rem!important
+            }
+            .ml-4, .mx-4 {
+                margin-left: 1.5rem!important
+            }
+            .m-5 {
+                margin: 3rem!important
+            }
+            .mt-5, .my-5 {
+                margin-top: 3rem!important
+            }
+            .mr-5, .mx-5 {
+                margin-right: 3rem!important
+            }
+            .mb-5, .my-5 {
+                margin-bottom: 3rem!important
+            }
+            .ml-5, .mx-5 {
+                margin-left: 3rem!important
+            }
+            .p-0 {
+                padding: 0!important
+            }
+            .pt-0, .py-0 {
+                padding-top: 0!important
+            }
+            .pr-0, .px-0 {
+                padding-right: 0!important
+            }
+            .pb-0, .py-0 {
+                padding-bottom: 0!important
+            }
+            .pl-0, .px-0 {
+                padding-left: 0!important
+            }
+            .p-1 {
+                padding: .25rem!important
+            }
+            .pt-1, .py-1 {
+                padding-top: .25rem!important
+            }
+            .pr-1, .px-1 {
+                padding-right: .25rem!important
+            }
+            .pb-1, .py-1 {
+                padding-bottom: .25rem!important
+            }
+            .pl-1, .px-1 {
+                padding-left: .25rem!important
+            }
+            .p-2 {
+                padding: .5rem!important
+            }
+            .pt-2, .py-2 {
+                padding-top: .5rem!important
+            }
+            .pr-2, .px-2 {
+                padding-right: .5rem!important
+            }
+            .pb-2, .py-2 {
+                padding-bottom: .5rem!important
+            }
+            .pl-2, .px-2 {
+                padding-left: .5rem!important
+            }
+            .p-3 {
+                padding: 1rem!important
+            }
+            .pt-3, .py-3 {
+                padding-top: 1rem!important
+            }
+            .pr-3, .px-3 {
+                padding-right: 1rem!important
+            }
+            .pb-3, .py-3 {
+                padding-bottom: 1rem!important
+            }
+            .pl-3, .px-3 {
+                padding-left: 1rem!important
+            }
+            .p-4 {
+                padding: 1.5rem!important
+            }
+            .pt-4, .py-4 {
+                padding-top: 1.5rem!important
+            }
+            .pr-4, .px-4 {
+                padding-right: 1.5rem!important
+            }
+            .pb-4, .py-4 {
+                padding-bottom: 1.5rem!important
+            }
+            .pl-4, .px-4 {
+                padding-left: 1.5rem!important
+            }
+            .p-5 {
+                padding: 3rem!important
+            }
+            .pt-5, .py-5 {
+                padding-top: 3rem!important
+            }
+            .pr-5, .px-5 {
+                padding-right: 3rem!important
+            }
+            .pb-5, .py-5 {
+                padding-bottom: 3rem!important
+            }
+            .pl-5, .px-5 {
+                padding-left: 3rem!important
+            }
+            .m-auto {
+                margin: auto!important
+            }
+            .mt-auto, .my-auto {
+                margin-top: auto!important
+            }
+            .mr-auto, .mx-auto {
+                margin-right: auto!important
+            }
+            .mb-auto, .my-auto {
+                margin-bottom: auto!important
+            }
+            .ml-auto, .mx-auto {
+                margin-left: auto!important
+            }
+            .numbering {
+                counter-reset: item;
+                padding-left: 0;
+            }
+            .numbering li { 
+                display: block;
+                margin-left: 13px;
+            }
+            .numbering li:before { 
+                content: counter(item) ". ";
+                counter-increment: item;
+                position: absolute;
+                margin-left: -1.7em;
+            }
+            .alphabeting {
+                counter-reset: section;
+                padding-left: 0;
+            }
+            .alphabeting li { 
+                display: block;
+                margin-left: 13px;
+            }
+            .alphabeting li:before { 
+                content: counter(section, lower-alpha) ". ";
+                counter-increment: section;
+                position: absolute;
+                margin-left: -1.7em;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <div class="text-center pb-4">
+                <img style="margin-top: -3px;" src="{% static 'image/Logo_PLN.png' %}" class="pt-3" height="100px">
+                <p class="font-weight-bold mb-0 lh-1">
+                    PT PLN (PERSERO)
+                </p>
+                <p class="font-weight-bold lh-1" style="margin-bottom: 10px;">
+                    UNIT INDUK DISTRIBUSI JAWA TIMUR
+                </p>
+
+                <p class="font-weight-bold mb-0 lh-1">
+                    KEPUTUSAN GENERAL MANAGER
+                </p>
+                <p class="font-weight-bold lh-1" style="margin-bottom: 10px;">
+                    PT PLN (PERSERO) UNIT INDUK DISTRIBUSI JAWA TIMUR
+                </p>                
+                <p class="font-weight-bold lh-1 lh-1" style="margin-bottom: 10px;">
+                    NOMOR : {{sesuatu.noSk}}
+                </p>
+                <p class="font-weight-bold lh-1 lh-1" style="margin-bottom: 10px;">
+                    TENTANG
+                </p>
+                {% if sesuatu.keterangan == "NAIK LEVEL KOMPETENSI" %}
+                    <p class="font-weight-bold lh-1" style="margin-bottom: 10px;">
+                        KENAIKAN LEVEL KOMPETENSI
+                    </p>
+                {% elif sesuatu.keterangan == "NAIK GRADE KHUSUS" %}
+                    <p class="font-weight-bold lh-1" style="margin-bottom: 10px;">
+                        KENAIKAN GRADE KHUSUS
+                    </p>
+                {% elif sesuatu.keterangan == "NAIK GRADE BIASA" %}
+                    <p class="font-weight-bold lh-1" style="margin-bottom: 10px;">
+                        KENAIKAN GRADE
+                    </p>
+                {% endif %}
+
+                <p class="font-weight-bold lh-1">
+                    GENERAL MANAGER PT PLN (PERSERO) UNIT INDUK DISTRIBUSI JAWA TIMUR
+                </p>
+            </div>
+            <table style="table-layout:fixed; margin-top: -10px; width:100%; font-size: 0.95rem;">
+                <tr>
+                    <td style="width:15%;">
+                        <p class="font-weight-bold">Menimbang</p>
+                    </td>
+                    <td style="width:3%;">
+                        <p class="font-weight-bold">:</p>
+                    </td>
+                    <td style="width:82%;">
+                        <ol class="mb-0 alphabeting" style="padding-left: .7rem;" type="a">
+                            <li>
+                                <p class="mb-0 text-justify">
+                                    Bahwa telah ditetapkannya Kriteria Talenta periode {{sesuatu.tglPeriode}}, maka perlu diberikan {% if sesuatu.keterangan == "NAIK LEVEL KOMPETENSI" %}
+                        Kenaikan Level Kompetensi
+                {% elif sesuatu.keterangan == "NAIK GRADE KHUSUS" %}
+                        Kenaikan Grade Khusus
+                {% elif sesuatu.keterangan == "NAIK GRADE BIASA" %}
+                        Kenaikan Grade
+                {% endif %}
+                                    bagi Pegawai yang telah memenuhi syarat yang ditentukan;
+                                </p>
+                            </li>
+                            <li>
+                                <p class="mb-0 text-justify">
+                                    Sehubungan dengan poin (a) diatas, maka perlu ditetapkan {% if sesuatu.keterangan == "NAIK LEVEL KOMPETENSI" %}
+                        Kenaikan Level Kompetensi
+                {% elif sesuatu.keterangan == "NAIK GRADE KHUSUS" %}
+                        Kenaikan Grade Khusus
+                {% elif sesuatu.keterangan == "NAIK GRADE BIASA" %}
+                        Kenaikan Grade
+                {% endif %} sebagai bentuk pembinaan
+                                    kompetensi
+                                    dan karir Pegawai.
+                                </p>
+                            </li>
+                        </ol>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="font-weight-bold">Mengingat</p>
+                    </td>
+                    <td>
+                        <p class="font-weight-bold">:</p>
+                    </td>
+                    <td>
+                        <ol class="mb-0 numbering" style="padding-left: .7rem;">
+                            <li>
+                                <p class="mb-0">
+                                    Peraturan Pemerintah R.I. No. 23 Tahun 1994;
+                                </p>
+                            </li>
+                            <li>
+                                <p class="mb-0">
+                                    Anggaran Dasar PT PLN (Persero);
+                                </p>
+                            </li>
+                            <li>
+                                <p class="mb-0">
+                                    Keputusan Menteri Badan Usaha Milik Negara No.SK-272/MBU/12/2014;
+                                </p>
+                            </li>
+                            <li>
+                                <p class="mb-0">
+                                    Keputusan Menteri Badan Usaha Milik Negara No.SK-211/MBU/07/2015;
+                                </p>
+                            </li>
+                            <li>
+                                <p class="mb-0">
+                                    Keputusan Menteri Badan Usaha Milik Negara No.SK-138/MBU/07/2017;
+                                </p>
+                            </li>
+                            <li>
+                                <p class="mb-0">
+                                    Peraturan Direksi PT PLN (Persero) No. 043.P/DIR/2015
+                                </p>
+                            </li>
+                            <li>
+                                <p class="mb-0">
+                                    Peraturan Direksi PT PLN (Persero) No. 045.P/DIR/2017;
+                                </p>
+                            </li>
+                            <li>
+                                <p class="mb-0">
+                                    Peraturan Direksi PT PLN (Persero) No. 0051.P/DIR/2018;
+                                </p>
+                            </li>
+                            <li>
+                                <p class="mb-0">
+                                    Keputusan Direksi PT PLN (Persero) No. 184.K/DIR/2008 sebagaimana telah diubah
+                                    terakhir dengan Keputusan Direksi PT PLN (Persero) No. 113.K/DIR/2010;
+                                </p>
+                            </li>
+                            <li>
+                                <p class="mb-0">
+                                    Keputusan Direksi PT PLN (Persero) No. 387.K/DIR/2008 sebagaimana telah diubah
+                                    terakhir dengan Keputusan Direksi PT PLN (Persero) Nomor 174.K/DIR/2012;
+                                </p>
+                            </li>
+                            <li>
+                                <p class="mb-0">
+                                    Keputusan Direksi PT PLN (Persero) No. 3484.K/SDM.00.03/DIR/2018; jo
+                                    Surat Kuasa Direksi PT PLN (Persero) No. 1035-67.SKU/SDM.08.01/DIRUT/2018;
+                                </p>
+                            </li>
+                            <li>
+                                <p class="mb-0">
+                                    Peraturan Direksi PT PLN (Persero) No. 0132.P/DIR/2018;
+                                </p>
+                            </li>
+                        </ol>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="text-center ">
+                        <p class="pt-2 font-weight-bold">
+                            MEMUTUSKAN
+                        </p>
+                    </td>
+                </tr>
+                <tr class="lh-1">
+                    <td>
+                        <p class="font-weight-bold mb-0">Menetapkan</p>
+                    </td>
+                    <td>
+                        <p class="mb-0">:</p>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+                <tr class="lh-1">
+                    <td>
+                        <p class="font-weight-bold mb-0">PERTAMA</p>
+                    </td>
+                    <td>
+                        <p class="mb-0">:</p>
+                    </td>
+                    <td>
+
+                        <p class="mb-0">
+                            Memberikan 
+                            {% if sesuatu.keterangan == "NAIK LEVEL KOMPETENSI" %}
+                                    Kenaikan Level Kompetensi
+                            {% elif sesuatu.keterangan == "NAIK GRADE KHUSUS" %}
+                                    Kenaikan Grade Khusus                              
+                            {% elif sesuatu.keterangan == "NAIK GRADE BIASA" %}
+                                    Kenaikan Grade
+                                
+                            {% endif %}
+                            kepada :
+                        </p>
+
+                    </td>
+                </tr>
+                <tr class="lh-1">
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td class="p-0">
+                        <table class="pl-0" style="table-layout:fixed; width:100%;">
+                            <tr class="lh-1">
+                                <td width="50%">
+                                    <p class="mb-0">Nama</p>
+                                </td>
+                                <td width="50%">
+                                    <p class="mb-0">
+                                        :<span class="pl-3">{{sesuatu.peg.nama}}</span>
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr class="lh-1">
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td class="p-0">
+                        <table class="pl-0" style="table-layout:fixed; width:100%;">
+                            <tr>
+                                <td width="50%">
+                                    <p class="mb-0">Nomor Induk</p>
+                                </td>
+                                <td width="50%">
+                                    <p class="mb-0">
+                                        :<span class="pl-3">{{sesuatu.peg.nipeg}}</span>
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr class="lh-1">
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td class="p-0">
+                        <table class="pl-0" style="table-layout:fixed; width:100%;">
+                            <tr>
+                                <td width="50%">
+                                    <p class="mb-0">Lama :</p>
+                                </td>
+                                <td width="50%">
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr class="lh-1">
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    {%  if sesuatu.keterangan == "NAIK LEVEL KOMPETENSI" %}
+                    <td class="p-0">
+                        <table class="pl-0" style="table-layout:fixed; width:100%;">
+                            <tr>
+
+                                <td width="50%">
+                                    <p class="mb-0" style="padding-left: 45px">Level Kompetensi</p>
+                                </td>
+                                <td width="50%">
+                                    <p class="mb-0">
+                                        :<span class="pl-3 font-italic">{{sesuatu.jenjangSebelum}}</span>
+                                    </p>
+                                </td>
+
+                            </tr>
+                        </table>
+                    </td>
+                    {% endif %}
+
+                </tr>
+                <tr class="lh-1">
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td class="p-0">
+                        <table class="pl-0" style="table-layout:fixed; width:100%;">
+                            <tr>
+                                <td width="50%">
+                                    <p class="mb-0 font-italic" style="padding-left: 45px">Grade</p>
+                                </td>
+                                <td width="50%">
+                                    <p class="mb-0">
+                                        :<span class="pl-3 font-italic">{{sesuatu.gradeSebelum}}</span>
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr class="lh-1">
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td class="p-0">
+                        <table class="pl-0" style="table-layout:fixed; width:100%;">
+                            <tr>
+                                <td width="50%">
+                                    <p class="mb-0" style="padding-left: 45px">Skala Gaji Dasar sebagai PhDP</p>
+                                </td>
+                                <td width="50%">
+                                    <p class="mb-0">
+                                        :<span class="pl-3">{{sesuatu.skalaGajiSebelum}}</span>
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr class="lh-1">
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td class="p-0">
+                        <table class="pl-0" style="table-layout:fixed; width:100%;">
+                            <tr>
+                                <td width="50%">
+                                    <p class="mb-0">Baru :</p>
+                                </td>
+                                <td width="50%">
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                {% if sesuatu.keterangan == "NAIK LEVEL KOMPETENSI" %}
+                <tr class="lh-1">
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td class="p-0">
+                        <table class="pl-0" style="table-layout:fixed; width:100%;">
+                            <tr>
+                                <td width="50%">
+                                    <p class="mb-0" style="padding-left: 45px">Level Kompetensi</p>
+                                </td>
+                                <td width="50%">
+                                    <p class="mb-0">
+                                        :<span class="pl-3 font-italic font-weight-bold">{{sesuatu.jenjangSesudah}}</span>
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                {% endif %}
+                <tr class="lh-1">
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td class="p-0">
+                        <table class="pl-0" style="table-layout:fixed; width:100%;">
+                            <tr>
+                                <td width="50%">
+                                    <p class="mb-0 font-italic" style="padding-left: 45px">Grade</p>
+                                </td>
+                                <td width="50%">
+                                    <p class="mb-0">
+                                        :<span class="pl-3 font-italic font-weight-bold">{{sesuatu.gradeSesudah}}</span>
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr class="lh-1">
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td class="p-0">
+                        <table class="pl-0" style="table-layout:fixed; width:100%;">
+                            <tr>
+                                <td width="50%">
+                                    <p class="mb-0" style="padding-left: 45px">Skala Gaji Dasar sebagai PhDP</p>
+                                </td>
+                                <td width="50%">
+                                    <p class="mb-0">
+                                        :<span class="pl-3 font-weight-bold">{{sesuatu.skalaGajiSesudah}}</span>
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="font-weight-bold mb-0 mt-2">KEDUA</p>
+                    </td>
+                    <td>
+                        <p class="mb-0 mt-2">:</p>
+                    </td>
+                    <td>
+                        <p class="mb-0 mt-2">
+                            Keputusan ini berlaku terhitung mulai tanggal {{sesuatu.tglBerlaku}}, dengan ketentuan bahwa apabila di kemudian hari terdapat
+                            kekeliruan dalam keputusan ini akan diperbaiki sebagaimana mestinya.
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                        <table class="pl-0 mt-2 pull-right" style="table-layout:fixed; width:50%;">
+                            <tr>
+                                <td width="35%">
+                                    <p class="mb-0">Ditetapkan di</p>
+                                </td>
+                                <td width="65%">
+                                    <p class="mb-0">
+                                        :<span class="pl-3">Surabaya</span>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="35%" >
+                                    <p class="mb-0">Pada Tanggal</p>
+                                    <p style="margin-top: -15px">_________________________</p>
+                                </td>
+                                
+                                <td width="65%">
+                                    <p class="mb-0">
+                                        :<span class="pl-3">{{sesuatu.tglSkKenaikan}}</span>
+                                    </p>                                    
+                                    <p style="margin-top: -15px">________________________</p>
+                                </td>
+
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <table style="table-layout:fixed; width:100%; padding-top: 10px; font-size: 0.95rem;">
+                <tr>
+                    <td width="50%">
+                        <p class="mb-0" style="margin-top:70px; font-size: 0.75rem;">Turunan keputusan ini disampaikan kepada :</p>
+                        <p class="mb-0" style="font-size: 0.75rem;">- Unit yang terkait</p>
+                    </td>
+                    
+                    <td  width="50%" class="text-center">
+                        <img style="margin-top:-50px;" src="{% static 'image/ttd.JPG' %}" class="pt-3" height="160px">
+                                    
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>

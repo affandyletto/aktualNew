@@ -1,0 +1,167 @@
+{% load static %}
+{% include 'head.html' %}
+                <!-- Potong kontennya disini - Awal -->
+                <div class="page-inner">
+                    <div class="page-header">
+                        <h4 class="page-title">Kenaikan Level dan Grade</h4>
+                        <ul class="breadcrumbs">
+                            <li class="nav-home">
+                                <a href="index.html">
+                                    <i class="flaticon-home"></i>
+                                </a>
+                            </li>
+                            <li class="separator">
+                                <i class="flaticon-right-arrow"></i>
+                            </li>
+                            <li class="nav-item">
+                                <a href="penilaian.html">Kenaikan Level dan Grade</a>
+                            </li>
+                            <li class="separator">
+                                <i class="flaticon-right-arrow"></i>
+                            </li>
+                            <li class="nav-item">
+                                <a href="penilaian.html">Lihat Data</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-12">
+
+                        {% if messages %}
+                            <ul class="messages">
+                            {% for message in messages %}
+                            <li>
+                                <div class="alert alert-success"><strong>{{ message }}</strong></div>
+                            </li>
+                            {% endfor %}
+                            </ul>
+                        {% endif %}
+                        
+                        <div class="card">
+                            <div class="card-header card-header-tab">
+                                <div class="card-header-title">
+                                    <h4 class="card-title">Penilaian Kriteria Talenta</h4>
+                                </div>
+                                <div class="btn-actions-pane-right">
+                                    <a href="{% url 'talenta:relod' 'talenta' %}" class="btn btn-warning">
+                                        Reload
+                                    </a>
+                                    
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <div class="btn-group pb-2">
+                                        <div class="col-md px-0">
+                                            <div class="form-check pr-0">
+                                                <label class="form-check-label">
+                                                    <input class="form-check-input" type="checkbox" id="selectAll">
+                                                    <span class="form-check-sign">Pilih Semua</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md py-1">
+                                            <button type="submit" name="kirimTalentaWa" form='talentaForm' class="btn btn-success px-2 py-1">
+                                                Kirim Notifikasi Whatsapp
+                                            </button>
+                                        </div>
+                                        <div class="col-md py-1 px-0">
+                                            <button type="submit" name="kirimTalenta" form='talentaForm' class="btn btn-warning px-2 py-1">
+                                                Kirim Email
+                                            </button>
+                                        </div>
+                                        <!--
+                                        <div class="col-md py-1">
+                                            <button type="submit" name="hapusTalenta" form='talentaForm' class="btn btn-danger px-2 py-1">
+                                                Hapus Data
+                                            </button>
+                                        </div>
+                                        -->
+                                    </div>
+                                    <form action='kirim' method='POST' id="talentaForm">
+                                         {% csrf_token %}
+                                    <table id="penilaianTable" class="display table table-striped table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th>No.</th>
+                                                <th>NIP</th>
+                                                <th>Nama</th>
+                                                <th>Jenjang Mayoritas</th>
+                                                <th width=350>Jabatan Sebelum</th>
+                                                <th>Jenjang Grade Sebelum Naik</th>
+                                                <th>Grade Sebelum Naik</th>
+                                                <th>Skala Gaji Dasar Sebelum Naik</th>
+                                                <th>Tanggal Grade Terakhir</th>
+                                                <th>2015</th>
+                                                <th>2016</th>
+                                                <th>2016 2</th>
+                                                <th>2017</th>
+                                                <th>2017 2</th>
+                                                <th>2018</th>
+                                                <th>2018 2</th>
+                                                <th>2019</th>
+                                                <th>Jenjang Grade Naik</th>
+                                                <th width=80>Grade Naik</th>
+                                                <th width=150>Skala Gaji Dasar Naik</th>
+                                                <th>Tanggal Naik</th>
+                                                <th>Tanggal Naik Per</th>
+                                                <th width=180>Keterangan Kenaikan</th>
+                                                <th>Nomor SK Kenaikan Lengkap</th>
+                                                <th>Tanggal SK Kenaikan</th>
+                                                <th>Nomor SK Kenaikan</th>
+                                                <th>No HP</th>
+                                                <th>Email</th>
+                                                <th width=70>Status PDF</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                        <tfoot>
+                                            <tr>
+                                                <th></th>
+                                                <th>No.</th>
+                                                <th>NIP</th>
+                                                <th>Nama</th>
+                                                <th>Jenjang Mayoritas</th>
+                                                <th width=350>Jabatan Sebelum</th>
+                                                <th>Jenjang Grade Sebelum Naik</th>
+                                                <th width=80>Grade Sebelum Naik</th>
+                                                <th width=150>Skala Gaji Dasar Sebelum Naik</th>
+                                                <th>Tanggal Grade Terakhir</th>
+                                                <th>2015</th>
+                                                <th>2016</th>
+                                                <th>2016 2</th>
+                                                <th>2017</th>
+                                                <th>2017 2</th>
+                                                <th>2018</th>
+                                                <th>2018 2</th>
+                                                <th>2019</th>
+                                                <th>Jenjang Grade Naik</th>
+                                                <th>Grade Naik</th>
+                                                <th>Skala Gaji Dasar Naik</th>
+                                                <th>Tanggal Naik</th>
+                                                <th>Tanggal Naik Per</th>
+                                                <th width=180>Keterangan Kenaikan</th>
+                                                <th>Nomor SK Kenaikan Lengkap</th>
+                                                <th>Tanggal SK Kenaikan</th>
+                                                <th>Nomor SK Kenaikan</th>
+                                                <th>No Hp</th>
+                                                <th>Email</th>
+                                                <th width=70>Status PDF</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </tfoot>
+                                        <tbody>
+                                            {% block data %}
+                                            
+                                            {% endblock data %}
+                                        </tbody>
+                                    </table>
+                                </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Potong kontennya disini - Akhir -->
+            
+{% include 'footer.html' %}

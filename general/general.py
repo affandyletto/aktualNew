@@ -251,11 +251,11 @@ def kirim(request,*args,**kwargs):
 							"location": "UID JATIM",
 							"signingdate": date,
 							"reason": judul,
-							"password": "kambing212",
+							"password": "",
 						}
 						with open("selfsigned.pfx", "rb") as fp:
 							p12 = pkcs12.load_key_and_certificates(
-								fp.read(), b"kambing212", backends.default_backend()
+								fp.read(), b"", backends.default_backend()
 							)				   
 						datau = open(filename, "rb").read()
 						datas = cms.sign(datau, dct, p12[0], p12[1], p12[2], "sha512")						
